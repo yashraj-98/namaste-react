@@ -1,0 +1,26 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashraj-98/namaste-react.git"
+  },
+  "keywords": [
+    "yash",
+    "raj"
+  ],
+  "author": "Yash Raj Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashraj-98/namaste-react/issues"
+  },
+  "homepage": "https://github.com/yashraj-98/namaste-react#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1"
+  }
+}
