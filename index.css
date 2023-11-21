@@ -28,11 +28,50 @@
   width: 199px;
   background-color: rgb(201, 218, 218);
   text-align: center;
+  justify-content: space-between;
 }
 .res-card:hover {
   cursor: pointer;
   border: 1px solid black;
 }
 .res-logo {
-  width: 99%;
+  width: 100%;
+  height: 50%;
+}
+.filter-btn {
+  background-color: rgb(215, 206, 231);
+  margin: 8px;
+  cursor: pointer;
+}
+.filter-btn :hover {
+  cursor: pointer;
+  border: 1px solid black;
+  border-color: rgb(255, 255, 255);
+}
+.shimmer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  height: 250px;
+  width: 180px;
+  background-color: rgb(234, 238, 241);
+  margin: 20px;
+}
+.login {
+  padding: 0px 10px;
+  margin: 10px;
+}
+.filter {
+  display: flex;
+}
+.search {
+  background-color: rgb(215, 206, 231);
+  margin: 8px;
+  cursor: pointer;
+}
+.search :hover {
+  cursor: pointer;
+  border: 1px solid black;
+  border-color: rgb(255, 255, 255);
 }
