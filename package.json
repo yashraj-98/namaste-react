@@ -11,9 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/yashraj-98/namaste-react.git"
   },
-  "keywords": [
-  ],
-  
+  "keywords": [],
   "author": "Yash Raj Singh",
   "license": "ISC",
   "bugs": {
@@ -26,6 +24,7 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.19.0"
   }
 }

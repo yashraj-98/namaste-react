@@ -5,7 +5,7 @@ const Body = () => {
   const [ListofRestaurants, SETListofRestaurants] = useState([]);
   const [filteredRestaurants, SETfilteredRestaurants] = useState([]);
   const [searchText, setsearchText] = useState("");
-  console.log("abc");
+  //console.log("Body Render");
   useEffect(() => {
     fetchData();
   }, []);
