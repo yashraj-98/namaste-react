@@ -2,14 +2,15 @@ import MockData from "../utils/MenuItemsMockData";
 
 const MenuItems = (menuitems) => {
   // console.log(menuitems.data.card.card.itemCards);
-  console.log("mockdata", MockData);
-  const MenuItemCards = menuitems.data.card.card.itemCards;
-  console.log("heloooo");
+  console.log("menuitem", menuitems);
+
   return (
     <div>
-      {MenuItemCards === undefined
-        ? MockData[0].map((data) => <div>{data.card.info.name}</div>)
-        : MenuItemCards.map((data) => <div>{data.card.info.name}</div>)}
+      <h1 className="text-xl font-bold text-red-400"> {menuitems?.title}</h1>
+      {menuitems?.data &&
+        menuitems?.data?.map((data) => {
+          return <div>{<h1>{data?.card?.info?.name}</h1>}</div>;
+        })}
     </div>
   );
 };

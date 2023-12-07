@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -6,7 +6,9 @@ const Body = () => {
   const [ListofRestaurants, SETListofRestaurants] = useState([]);
   const [filteredRestaurants, SETfilteredRestaurants] = useState([]);
   const [searchText, setsearchText] = useState("");
+
   //console.log("Body Render");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,17 +37,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-3 p-3">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setsearchText(e.target.value);
             }}
           ></input>
           <button
+            className="m-3 px-3 py-1 bg-green-100 rounded-lg"
             onClick={() => {
               const filteredRestaurants = ListofRestaurants.filter((RES) =>
                 RES.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -57,19 +60,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = ListofRestaurants.filter(
-              (RES) => RES.info.avgRating > 4
-            );
-            SETListofRestaurants(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search m-3 p-3 flex items-center">
+          <button
+            className="m-3 px-3 py-1 bg-slate-100 rounded-lg"
+            onClick={() => {
+              const filteredList = ListofRestaurants.filter(
+                (RES) => RES.info.avgRating > 4
+              );
+              SETListofRestaurants(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => (
           <RestaurantCard key={restaurant?.info?.id} resdata={restaurant} />
         ))}
