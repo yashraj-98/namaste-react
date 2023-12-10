@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnname, setbtnname] = useState("Login");
@@ -8,11 +9,12 @@ const Header = () => {
   // useEffect(() => {
   //   console.log("useEffect called");
   // }, [btnname]);
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-violet-100 shadow-lg">
       <div className="logo-container">
-        <img className="w-[7rem] p-5 m-5" src={LOGO_URL}></img>
+        <img className="w-[7rem] p-5 m-5 " src={LOGO_URL}></img>
       </div>
       <div className="flex items-center">
         <ul className="flex p-5 m-5">
@@ -34,6 +36,7 @@ const Header = () => {
           >
             {btnname}
           </button>
+          <li>{loggedInUser}</li>
         </ul>
       </div>
     </div>

@@ -5,8 +5,8 @@ import Body from "./components/Body";
 //import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
-import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import RestaurantMenuPath from "./components/RestaurantMenuPath";
 
 const About = lazy(() => import("./components/About"));
 
@@ -41,7 +41,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurants/:resId",
-        element: <RestaurantMenu />,
+        element: <RestaurantMenuPath />,
       },
     ],
     errorElement: <Error />,
